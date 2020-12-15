@@ -1,0 +1,184 @@
+<h3>Collect Customer Requirements</h3>
+<form role="form"
+      name="variablesForm">
+  
+  <!-- Set customer type to "business" -->
+  <input type="hidden"
+       cam-variable-name="customerType"
+       cam-variable-type="String"
+       value="business" />
+     
+  <!-- Set birth date to dummy value -->   
+  <input type="hidden"
+       cam-variable-name="birthDate"
+       cam-variable-type="Date"
+       value="2000-01-01T12:00:00" />
+  
+  <!-- Customer Name -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <div class="controls">
+        <input required
+          class="form-control"
+          cam-variable-type="String"
+          cam-variable-name="name"
+          name="name"
+          id="name"
+          type="text" />
+      </div>
+    </div>
+  
+    <!-- Vehicle Model -->
+    <div class="form-group">
+      <label for="selectVehicleModel">Vehicle Model</label>
+      <div class="controls">
+        <!--select box -->
+        <select required
+           id="car-select"
+           class="form-control"
+           name="selectVehicleModel"
+           cam-variable-name="carId"
+           cam-variable-type="Long">
+          <option>Please choose...</option>
+        </select>
+      </div>
+  </div>  
+
+  
+  <!-- number_of_vehicles -->
+    <div class="form-group">
+      <label for="number_of_vehicles">Number of Vehicles</label>
+      <div class="controls">
+        <input required
+          class="form-control"
+          cam-variable-type="Integer"
+          cam-variable-name="number_of_vehicles"
+          name="number_of_vehicles"
+          id="number_of_vehicles"
+          type="text" 
+      pattern="[0-9]*"/>
+      </div>
+    </div>  
+  
+  <!-- Pickup Date -->
+    <div class="form-group">
+      <label for="pickupdate">Pickup Date</label>
+      <div class="controls">
+        <input required
+          class="form-control"
+          cam-variable-type="Date"
+          cam-variable-name="pickupDate"
+          name="pickupDate"
+          id="pickupDate" 
+          type="datetime-local" step="1"
+      />
+      </div>
+    </div>
+  
+  <!-- Return Date -->
+    <div class="form-group">
+      <label for="returndate">Return Date</label>
+      <div class="controls">
+        <input required
+          class="form-control"
+          cam-variable-type="Date"
+          cam-variable-name="returnDate"
+          name="returnDate"
+          id="returnDate"
+          type="datetime-local" step="1"
+      />
+      </div>
+    </div>
+  
+  <!-- Pickup Location -->
+    <div class="form-group">
+      <label for="pickupLocation">Pickup Location</label>
+      <div class="controls">
+        <input required
+          class="form-control"
+          cam-variable-type="String"
+          cam-variable-name="pickupLocation"
+          name="pickupLocation"
+          id="pickupLocation" 
+          type="text" />
+      </div>
+    </div>
+  
+  <!-- Return Location -->
+    <div class="form-group">
+      <label for="returnLocation">Return Location</label>
+      <div class="controls">
+        <input required
+          class="form-control"
+          cam-variable-type="String"
+          cam-variable-name="returnLocation"
+          name="returnLocation"
+          id="returnLocation"
+          type="text" />
+      </div>
+    </div>
+
+  <!-- Address -->
+    <div class="form-group">
+      <label for="inputAddress">Address</label>
+      <div class="controls">
+        <textarea class="form-control"
+                  cam-variable-name="address"
+                  cam-variable-type="String"
+                  name="address"
+                  id ="address" 
+                  rows="4"
+          required></textarea>
+      </div>
+    </div>
+  
+  <!-- phoneNumber -->
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <div class="controls">
+        <input required
+          class="form-control"
+          cam-variable-type="String"
+          cam-variable-name="phoneNumber"
+          name="phoneNumber"
+          id="phoneNumber"
+          type="text" 
+      pattern="[0-9,+, ]*"/>
+      </div>
+    </div>
+
+  <!-- E-Mail -->
+    <div class="form-group">
+      <label for="email">E-Mail Address</label>
+      <div class="controls">
+        <input required
+          class="form-control"
+          cam-variable-type="String"
+          cam-variable-name="eMail"
+          name="eMail"
+          id="eMail"
+          type="email" />
+      </div>
+    </div>  
+  
+  </div>
+
+</div>
+</form>
+  <script>
+    //get cars
+      fetch('http://localhost:8080/cars')
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(cars) {
+          //console.log(cars);
+          cars.forEach(function(car) {
+      //add cars to select
+            var opt = document.createElement('option');
+            opt.value = car.id;
+            opt.innerHTML = car.name;
+            document.getElementById('car-select').appendChild(opt);
+          });
+        });
+  </script>

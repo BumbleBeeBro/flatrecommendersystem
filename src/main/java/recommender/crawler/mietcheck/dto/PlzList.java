@@ -1,0 +1,13 @@
+package recommender.crawler.mietcheck.dto;
+
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class PlzList {
+
+	@JsonProperty("plz_list")
+	public List<Plz> plzList;
+}

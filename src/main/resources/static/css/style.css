@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    background-image: url('/images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: grey;
+}
+
+.bvis-1 {
+    color: rgb(133, 35, 57);
+}
+.bvis-1-bg {
+    background-color: rgb(133, 35, 57);
+}
+
+.bvis-2-bg {
+    background-color: grey
+}
+
+.bvis-3-bg {
+    background-color: rgb(231, 124, 18);
+}
+
+.bvis-4-bg {
+    background-color: rgb(135, 191, 42);
+}
+
+
+
+.bvis-1-bg-hover:hover {
+    background-color: rgb(100, 26, 42);
+}
+
+.bvis-2 {
+    color: grey
+}
+
+.bvis-2-bg-hover:hover {
+    background-color: rgb(100, 100, 100);
+}
+
+.transparent {
+    background-color: rgba(255, 255, 255, 0.829);
+}
+
+.error {
+    background-color: rgba(231, 124, 18, 0.6);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    border-radius: 40px;
+    padding: 70px 0;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 130px;
+    font-style: italic;
+    font-weight: bold;
+    margin: 0 0 50px 0;
+}
+
+h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img.brand {
+    width: 400px;
+}
+
+.center {
+    text-align: center;
+}
+.right {
+    text-align: right;
+}
+
+.title {
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    border-bottom: 3px solid white;
+}
+
+.button {
+    font-family: inherit;
+    padding: 10px 20px;
+    font-size: inherit;
+    outline: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    
+}
+
+.button.entry {
+    padding: 25px 55px;
+    border-radius: 45px;
+    font-size: 40px;
+    margin: 20px;
+    width: 330px;
+}
+
+i.inline-icon {
+    margin-left: 10px;
+}
+
+.content {
+    margin: auto;
+    width: 80%;
+    padding: 50px;
+    border-radius: 8px;
+    animation: fadein 1s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.form {
+    margin: auto;
+    width: 484px;
+}
+.input-group {
+    margin-bottom: 20px;
+}
+
+.button-group {
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 300px;
+}
+
+.input-group label {
+    display: inline-block;
+    width: 170px;
+}
+.input-group .input {
+    width: 250px;
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.829);
+}
+
+.input-group .input {
+    font-family: inherit;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: inherit;
+    outline: none;
+    border-radius: 8px;
+    width: 300px;
+}
+.input-group .input:focus {
+    border-color: rgb(133, 35, 57);
+}
+.input-group .input.combo-small {
+    width: 100px;
+}
+.input-group .input.combo-big {
+    width: 186px;
+}
+
+table.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table.table td {
+    border-bottom: 3px solid white;
+    padding: 10px;
+    vertical-align: center;
+}
+
+table.car-list td.image {
+    width: 240px;
+}
+table.car-list td.image img {
+    width: 100%;
+}
+
+table.car-list td {
+    height: 200px;
+}
+
+table.car-list td.name {
+    font-weight: bold;
+}
+
+table.car-list td.price, table.insurance-list td.price {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+table.car-list td.select, table.insurance-list td.select {
+    text-align: right;
+}
+
+table.insurance-list td {
+    height: 100px;
+}
+
+small {
+    font-weight: normal;
+    font-size: 17px;
+}
+
+.document {
+    background-color: white;
+    padding: 60px 50px;
+    font-family: monospace;
+    box-shadow: 0 0 20px grey;
+    margin: auto;
+    width: 600px;
+    border: 10px;
+}
+
+.info {
+    text-align: center;
+}

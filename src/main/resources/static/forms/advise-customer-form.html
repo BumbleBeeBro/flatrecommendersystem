@@ -1,0 +1,107 @@
+<form name="adviseCustomer" role="form">
+    
+<div class="row">
+
+  <div class="col-xs-6">
+
+
+   <script cam-script type="text/form-script">
+
+   var variableManager = camForm.variableManager;
+  
+
+  camForm.on('form-loaded', function() {
+      // fetch the variables named 'offerings' and 'carID'
+      camForm.variableManager.fetchVariable('offerings');
+    camForm.variableManager.fetchVariable('carId');
+    });
+  
+  inject(['$http', 'Uri', function($http, Uri) {
+   camForm.on('variables-fetched', function() {
+      // bind fetched variable to a angular scope
+      $scope.offerings = camForm.variableManager.variable('offerings').value;
+    
+  //construct the request url
+    var carId = camForm.variableManager.variable('carId').value;
+    var service = "http://localhost:8080/cars/";
+    var path = service.concat(carId);
+    //console.log(path);
+    
+    // use injected $http service for request
+        $http.get(Uri.appUri(path)).success(function(scar) {
+          $scope.scar = scar;
+      console.log($scope.offerings);
+      console.log($scope.scar);
+
+      
+        });
+    });
+   }]);
+
+
+    camForm.on('submit', function() {
+      // remove '$$hashKey' properties from insurance objects
+      angular.forEach($scope.offerings.insuranceOfferings, function(offer) {
+        delete offer.$$hashKey;
+      });
+    });
+  
+ 
+  </script>
+
+  <p class="lead">Please advise the customer</p>
+
+<!--   Display all insurance offers -->
+  <div ng-repeat="offer in offerings">
+    <address>
+      <strong>{{offer.name}}</strong><br>
+      {{offer.price}}&euro;<br>
+      {{offer.description}}
+    </address>
+  </div>
+  
+
+   <!-- Insurance selection -->
+     <div class="form-group">
+      <label for="selectInsurance">Select Insurance</label>
+      <div class="controls" >
+        
+        <select required
+           class="form-control"
+           name="selectInsurance"
+           cam-variable-name="insuranceId"
+           cam-variable-type="Integer">
+          <option ng-repeat="offer in offerings" value="{{offer.offer_id}}" >{{offer.name}}</option>
+        </select>
+      </div>
+  </div>
+  
+  <!-- Display vehicle model and suggested price -->
+  <div class="form-group" >
+    <p>Suggested Price per Vehicle and Day:</p> 
+      <div class="controls">
+    <p id="car-name-display">{{scar.name}}</p><br>
+    <p id="car-price-display">{{scar.pricePerDay}}&euro;</p><br>
+      </div>
+  </div>
+   
+  <!-- Enter price per day -->
+     <div class="form-group">
+      <label for="pricePerDay">Set Price per Vehicle and Day</label>
+      <div class="controls">
+        <input required
+          class="form-control"
+          cam-variable-type="Double"
+          cam-variable-name="pricePerDay"
+          name="pricePerDay"
+          type="number"/>
+      </div>
+    </div>
+  </div> 
+
+</div>
+
+</form>
+
+  
+

@@ -1,0 +1,32 @@
+{{#partial "content"}}
+      <div class="content transparent">
+        <h2 class="bvis-1 title">Your contract</h2>
+        <div class="document">
+          <p> Contract: {{contract.id}}_{{contract.customer_type}} <br>
+        ----------------------------------------<br>
+        Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{contract.name}}<br>
+        Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{contract.address}} <br>
+        ----------------------------------------<br>
+        Pickup:&nbsp;{{contract.pickup_date}} &nbsp;&nbsp;at: {{contract.pickup_location}}<br>
+        Return:&nbsp;{{contract.return_date}} &nbsp;&nbsp;at: {{contract.return_location}}<br>
+        ----------------------------------------<br>
+        Car:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{name}} &nbsp;({{contract.number_of_vehicles}})
+        <br>
+        Insurance:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{contract.insurance_name}} <br> 
+        Vehicle&nbsp;per&nbsp;day:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;€ {{contract.price_per_day}}  <br> 
+        Insurance&nbsp;per&nbsp;day:&nbsp;&nbsp;&nbsp;€ {{contract.insurance_price_per_day}}  <br> 
+        ----------------------------------------<br> 
+        Overall&nbsp;total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;€ {{contract.total_price}}  <br> 
+        ----------------------------------------<br>  
+        BVIS Ltd.
+          </p>
+        </div>
+        <div class="button-group">
+            <a href="/{{processInstanceId}}/contract-accept"><button class="bvis-4-bg bvis-1-bg-hover button">Accept</button></a>
+            <a href="/{{processInstanceId}}/contract-edit"><button class="bvis-3-bg bvis-1-bg-hover button">Edit</button></a>
+            <a href="/{{processInstanceId}}/contract-decline"><button class="bvis-1-bg bvis-1-bg-hover button">Decline</button></a>
+        </div>
+      </div>
+{{/partial}}
+
+{{> base}}

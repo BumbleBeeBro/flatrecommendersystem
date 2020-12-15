@@ -1,0 +1,43 @@
+{{#partial "content"}}
+        <div class="content transparent">
+          <h2 class="bvis-1 title">Please enter your information</h2>
+          <form class="form" action="/{{processInstanceId}}/customer-info" object="customerInfo" method="post">
+            <div class="input-group">
+                <label>First name</label>
+                <input type="text" name="firstName" placeholder="First name" class="input" >
+            </div>
+            <div class="input-group">
+                <label>Last name</label>
+                <input type="text" name="lastName" placeholder="Last name" class="input" >
+            </div>
+            <div class="input-group">
+                <label>Birth date</label>
+                <input name="birthDate" placeholder="Birth date" type="date" class="input" >
+            </div>
+            <div class="input-group">
+                <label>Street, house no.</label>
+                <input name="streetName" type="text" placeholder="Street" class="input combo-big" >
+                <input name="houseNumber" type="text" placeholder="No." class="input combo-small" >
+            </div>
+            <div class="input-group">
+                <label>ZIP code, city</label>
+                <input name="zipCode" type="text" placeholder="ZIP" class="input combo-small" >
+                <input name="city" type="text" placeholder="City" class="input combo-big" >
+            </div>
+            <div class="input-group">
+                <label>Phone</label>
+                <input name="phoneNumber" type="tel" placeholder="Phone" class="input" >
+            </div>
+            <div class="input-group">
+                <label>eMail</label>
+                <input name="eMail" type="email" placeholder="eMail" class="input">
+            </div>
+            <div class="input-group">
+                <label></label>
+                <input type="submit" class="bvis-1-bg bvis-1-bg-hover button" value="Submit">
+            </div>
+          </form>
+      </div>
+{{/partial}}
+
+{{> base}}

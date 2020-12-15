@@ -1,0 +1,29 @@
+{{#partial "content"}}
+        <div class="content transparent">
+            <h2 class="bvis-1 title">Pickup / return</h2>
+            <form class="form" action="/{{processInstanceId}}/pickup-and-return" method="POST">
+            <div class="input-group">
+                <label>Pickup location</label>
+                <input name="pickupLocation" placeholder="Pickup location" class="input" value="{{pickupLocation}}">
+            </div>
+            <div class="input-group">
+                <label>Pickup date</label>
+                <input name="pickupDate" placeholder="Pickup date" type="datetime-local" class="input" value="{{pickupDate}}">
+            </div>
+            <div class="input-group">
+                    <label>Return location</label>
+                    <input name="returnLocation" placeholder="Return location" class="input" value="{{returnLocation}}">
+                </div>
+                <div class="input-group">
+                    <label>Return date</label>
+                    <input name="returnDate" placeholder="Return date" type="datetime-local" class="input" value="{{returnDate}}">
+                </div>
+            <div class="input-group">
+                <label></label>
+                <input type="submit" class="bvis-1-bg bvis-1-bg-hover button" value="Show available cars">
+            </div>
+            </form>
+      </div>
+{{/partial}}
+
+{{> base}}

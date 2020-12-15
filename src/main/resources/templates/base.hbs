@@ -1,0 +1,33 @@
+{{#block "header"}}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/style.css"> 
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <title>BVIS Rental Services</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1><a href="/"><img src="/images/brand.png" class="brand"></a></h1>
+        {{#if errors includeZero=true}}
+        <div class="content error">
+          {{#each errors}}
+          <p>
+            {{this}}
+          </p>
+          {{/each}}
+          </div>
+        {{/if}}
+      
+{{/block}}
+
+{{#block "content"}}
+{{/block}}
+
+{{#block "footer"}}
+    </div>
+  </body>
+</html>
+{{/block}}
